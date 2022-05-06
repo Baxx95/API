@@ -4,6 +4,7 @@ on:
   # run it on push to the default repository branch
   push:
     branches: [main, cicd]
+  # run it during pull request
   repository_dispatch:
 
 jobs:
@@ -35,7 +36,6 @@ jobs:
         
       - name: Check outputs
         run: echo ${{ steps.vars.outputs.sha_short }}
-
       ############# MODEL ###############
 
       - uses: docker-practice/actions-setup-docker@master
